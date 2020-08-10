@@ -135,21 +135,17 @@ public class Solution {
         str.substring(0,str.length()-(minLenght>4?4:minLenght));
 
         for (int i = 0; i < str.length(); i++) {
-if (!(str.charAt(i)=='['||str.charAt(i)==']'))
-            newStr=newStr.concat("#");
+if ((!(str.charAt(i)=='['||str.charAt(i)==']'))||
+        ((i<str.length()-2)&&((str.charAt(i)=='[')&&str.charAt(i+1)=='['))||((i>0)&&((str.charAt(i)==']')&&str.charAt(i-1)==']'))) {
+    if(i>1&&((str.charAt(i-1)=='['))){
+        newStr = newStr.concat("");
+    }
+    else newStr = newStr.concat("#");
+}
+
     else newStr=newStr.concat(String.valueOf(str.charAt(i)));
-
-
-//        if ((!(str.charAt(i)=='['||str.charAt(i)==']'))||
-//                (i>0)&&(((str.charAt(i)=='[')==(str.charAt(i-1)=='['))||((str.charAt(i)==']')==(str.charAt(i-1)==']')))) {
-//
-//
-//        }else newStr=newStr.concat(String.valueOf(str.charAt(i)));
         }
-
    return newStr.concat(threeCharFromEnd);
-
-    //    return .replaceAll("[\\.+]","#").concat(threeCharFromEnd);
 }
 }
 //    i) If a = 0 or b = 0, return [a,b]. Otherwise, go to step (ii);           [ ]

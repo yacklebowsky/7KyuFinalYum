@@ -14,6 +14,6 @@ public class Main {
      //   System.out.println(solution.getMiddle("zaem"));
      //   System.out.println(solution.disemvowel("trzymajcie sie tam w tej Polsc[O]Oe"));
       //  System.out.println(solution.metheo());
-        System.out.println(solution.maskify("b[[d]jss]"));
+        System.out.println(solution.maskify("b[[[d]]d]]jss]"));
     }
 }

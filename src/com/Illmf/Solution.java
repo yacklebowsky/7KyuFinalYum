@@ -131,14 +131,31 @@ public class Solution {
     public static String maskify(String str) {
         int minLenght=str.length();
         String threeCharFromEnd=str.substring(str.length()-(minLenght>4?4:minLenght));
-        return str.substring(0,str.length()-(minLenght>4?4:minLenght)).replaceAll("(/]/[ )*1","#").concat(threeCharFromEnd);
-    }
+        String newStr="";
+        str.substring(0,str.length()-(minLenght>4?4:minLenght));
+
+        for (int i = 0; i < str.length(); i++) {
+if (!(str.charAt(i)=='['||str.charAt(i)==']'))
+            newStr=newStr.concat("#");
+    else newStr=newStr.concat(String.valueOf(str.charAt(i)));
 
 
+//        if ((!(str.charAt(i)=='['||str.charAt(i)==']'))||
+//                (i>0)&&(((str.charAt(i)=='[')==(str.charAt(i-1)=='['))||((str.charAt(i)==']')==(str.charAt(i-1)==']')))) {
+//
+//
+//        }else newStr=newStr.concat(String.valueOf(str.charAt(i)));
+        }
+
+   return newStr.concat(threeCharFromEnd);
+
+    //    return .replaceAll("[\\.+]","#").concat(threeCharFromEnd);
+}
 }
 //    i) If a = 0 or b = 0, return [a,b]. Otherwise, go to step (ii);           [ ]
 //    ii) If a ≥ 2*b, set a = a - 2*b, and repeat step (i). Otherwise, go to step (iii);
-//    iii) If b ≥ 2*a, set b = b - 2*a, and repeat step (i). Otherwise, return [a,
+//    iii) If b ≥ 2*a, set b = b - 2*a, and repeat step (i). Otherwise, return [a,b].
+
 
 //import java.util.regex.*;
 //public class Troll {
